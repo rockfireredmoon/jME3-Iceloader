@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<name>Iceloader Parent</name>
+	<description>Parent group for the suite of modules that make up Iceloader, Asset loader extensions for JME3.</description>
+	<groupId>jME3-ext</groupId>
+	<artifactId>jME3-Iceloader</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<jmonkey.version>3.0.0.20140325-SNAPSHOT</jmonkey.version>
+	</properties>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
+		<outputDirectory>target/classes</outputDirectory>
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<!-- The core library -->
+		<dependency>
+			<groupId>com.jme3</groupId>
+			<artifactId>jME3-core</artifactId>
+			<version>${jmonkey.version}</version>
+		</dependency>
+	</dependencies>
+	<repositories>
+		<!-- JME3 itself is here -->
+		<repository>
+			<id>oss-sonatype</id>
+			<name>oss-sonatype</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots />
+		</repository>
+	</repositories>
+	<packaging>pom</packaging>
+	<modules>
+		<module>../jME3-Iceloader-ext-plugin</module>
+		<module>../jME3-Iceloader-plugin</module>
+		<module>../jME3-Iceloader-Ant-plugin</module>
+		<module>../jME3-Iceloader-Maven-plugin</module>
+	</modules>
+</project>
